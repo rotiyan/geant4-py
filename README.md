@@ -1,3 +1,4 @@
 Docker container for python based Geant4 application
 
-docker run --network=host -it -v /home/rnarayan/:/home/rnarayan -p 9999  rotiyan/geant4-10.6
+docker run --network=host -e DISPLAY=$DISPLAY  -it -v /home/rnarayan:/home/rnarayan  rotiyan/geant4-10.6
+python demo.py
