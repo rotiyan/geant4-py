@@ -35,11 +35,13 @@ RUN mkdir -p /app/geant4 &&\
     cmake --build . -- -j24 &&\
     mkdir -p /opt
 ENV GEANT4_INSTALL=/app/geant4/geant4-$G4VER-install
+COPY pyG4GeneralParticleSource.cc /app/geant4/geant4-10.6.1-source/environments/g4py/source/event/
 ENV G4PY=/app/geant4/geant4-$G4VER-source/environments/g4py
 ENV PYTHONPATH=$PYTHONPATH:$G4PY/lib:$G4PY/examples:$G4PY/tests
 RUN . /app/geant4/geant4-$G4VER-install/bin/geant4.sh && \
     . /app/root/root-$ROOTVER-build/bin/thisroot.sh &&\
-    #Make edits to G4PythonBindings
+    #Make edits 
+    sed -i '13i \ \ \ \ pyG4GeneralParticleSource.cc' /app/geant4/geant4-10.6.1-source/environments/g4py/source/event/CMakeLists.txt && \
     sed -i '54i \ \ \ \ .def("GetNonIonizingEnergyDeposit", &G4Step::GetNonIonizingEnergyDeposit)' /app/geant4/geant4-10.6.1-source/environments/g4py/source/track/pyG4Step.cc &&\
     cd  /app/geant4/geant4-$G4VER-source/environments/g4py && mkdir -p build && cd build &&\
     cmake .. && make -j24 && make install 
