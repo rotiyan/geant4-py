@@ -42,6 +42,8 @@ RUN . /app/geant4/geant4-$G4VER-install/bin/geant4.sh && \
     . /app/root/root-$ROOTVER-build/bin/thisroot.sh &&\
     #Make edits 
     sed -i '13i \ \ \ \ pyG4GeneralParticleSource.cc' /app/geant4/geant4-10.6.1-source/environments/g4py/source/event/CMakeLists.txt && \
+    sed -i '43i \ \ \ \ void export_G4GeneralParticleSource();' /app/geant4/geant4-10.6.1-source/environments/g4py/source/event/pymodG4event.cc && \
+    sed -i '54i \ \ \ \ export_G4GeneralParticleSource();' /app/geant4/geant4-10.6.1-source/environments/g4py/source/event/pymodG4event.cc && \
     sed -i '54i \ \ \ \ .def("GetNonIonizingEnergyDeposit", &G4Step::GetNonIonizingEnergyDeposit)' /app/geant4/geant4-10.6.1-source/environments/g4py/source/track/pyG4Step.cc &&\
     cd  /app/geant4/geant4-$G4VER-source/environments/g4py && mkdir -p build && cd build &&\
     cmake .. && make -j24 && make install 
