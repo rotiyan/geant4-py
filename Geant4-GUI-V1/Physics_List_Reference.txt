@@ -1,0 +1,47 @@
+
+Use Cases - Reference Physics Lists
+
+This page is under construction!
+
+If you have experience and/or comparisions to data in one of the topics below, or a new topic, please contact us via the physics list forum
+on Geant4 hypernews
+High energy physics calorimetry
+
+Recommended: FTFP_BERT, QGSP_BERT
+
+ 
+
+Studies of testbeam data currently show that a string model coupled to a cascade model is needed for a good description of hadronic showers; the FTFP_BERT and QGSP_BERT physics lists improve agreement with LHC testbeam data for the longitudinal shape, the lateral shape and for resolution. These lists are currently chosen by the LHC experiments ATLAS and CMS as default physics lists.
+High energy physics tracker
+
+Recommended: FTFP_BERT, QGSP_BERT, QGSP_BIC
+'typical' HEP collider detector
+
+Recommended: FTFP_BERT
+LHC neutron fluxes
+
+The Simulation of neutron fluxes needs, in addition to the simulation of hadronic showers, a transport for low energy neutron down to thermal energies. Recommended: QGSP_BERT_HP, QGSP_BIC_HP
+Linear collider neutron fluxes
+
+Recommended: QGSP_BERT_HP, QGSP_BIC_HP
+Shielding applications (all energies)
+
+Recommended: QGSP_BERT_HP, QGSP_BIC_HP, QGSP_INCLXX, Shielding
+Low energy dosimetric applications
+
+Recommended: QGSP_BERT_HP, QGSP_BIC_HP
+Medical and industrial neutron applications
+
+Recommended: QGSP_BERT_HP, QGSP_BIC_HP, QGSP_INCLXX
+Underground physics
+
+Recommended: Shielding
+air shower
+Hadron production, including simulation for neutrino beamline(s)
+Intermediate energy (up to ~10GeV)
+
+Recommended: FTFP_BERT, NuBeam
+Intermediate energy (above 10GeV)
+
+Recommended: QGSP_BERT, NuBeam, FTFP_BERT (for beam momentum of several tens of GeV/c)
+from https://geant4.web.cern.ch/node/302

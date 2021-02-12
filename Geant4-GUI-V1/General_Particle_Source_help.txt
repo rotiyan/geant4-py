@@ -1,0 +1,325 @@
+Source position and structure
+
+Command
+
+Arguments
+
+Description and restrictions
+
+/gps/pos/type
+
+dist
+
+Sets the source positional distribution type: Point [default], Plane, Beam, Surface, Volume.
+
+/gps/pos/shape
+
+shape
+
+Sets the source shape type, after /gps/pos/type has been used. For a Plane this can be Circle, Annulus, Ellipse, Square, Rectangle. For both Surface or Volume sources this can be Sphere, Ellipsoid, Cylinder, Para (parallelepiped).
+
+/gps/pos/centre
+
+X Y Z unit
+
+Sets the centre co-ordinates (X,Y,Z) of the source [default (0,0,0) cm]. The units can only be micron, mm, cm, m or km.
+
+/gps/pos/rot1
+
+R1x R1y R1z
+
+Defines the first (x direction) vector R1 [default (1,0,0)], which does not need to be a unit vector, and is used together with /gps/pos/rot2 to create the rotation matrix of the shape defined with /gps/shape.
+
+/gps/pos/rot2
+
+R2x R2y R2z
+
+Defines the second vector R2 in the xy plane [default (0,1,0)], which does not need to be a unit vector, and is used together with /gps/pos/rot1 to create the rotation matrix of the shape defined with /gps/shape.
+
+/gps/pos/halfx
+
+len unit
+
+Sets the half-length in x [default 0 cm] of the source. The units can only be micron, mm, cm, m or km.
+
+/gps/pos/halfy
+
+len unit
+
+Sets the half-length in y [default 0 cm] of the source. The units can only be micron, mm, cm, m or km.
+
+/gps/pos/halfz
+
+len unit
+
+Sets the half-length in z [default 0 cm] of the source. The units can only be micron, mm, cm, m or km.
+
+/gps/pos/radius
+
+len unit
+
+Sets the radius [default 0 cm] of the source or the outer radius for annuli. The units can only be micron, mm, cm, m or km.
+
+/gps/pos/inner_radius
+
+len unit
+
+Sets the inner radius [default 0 cm] for annuli. The units can only be micron, mm, cm, m or km.
+
+/gps/pos/sigma_r
+
+sigma unit
+
+Sets the transverse (radial) standard deviation [default 0 cm] of beam position profile. The units can only be micron, mm, cm, m or km.
+
+/gps/pos/sigma_x
+
+sigma unit
+
+Sets the standard deviation [default 0 cm] of beam position profile in x-direction. The units can only be micron, mm, cm, m or km.
+
+/gps/pos/sigma_y
+
+sigma unit
+
+Sets the standard deviation [default 0 cm] of beam position profile in y-direction. The units can only be micron, mm, cm, m or km.
+
+/gps/pos/paralp
+
+alpha unit
+
+Used with a Parallelepiped. The angle [default 0 rad] ± formed by the y-axis and the plane joining the centre of the faces parallel to the zx plane at y and +y. The units can only be deg or rad.
+
+/gps/pos/parthe
+
+theta unit
+
+Used with a Parallelepiped. Polar angle [default 0 rad] ¸ of the line connecting the centre of the face at z to the centre of the face at +z. The units can only be deg or rad.
+
+/gps/pos/parphi
+
+phi unit
+
+Used with a Parallelepiped. The azimuth angle [default 0 rad] Õ of the line connecting the centre of the face at z with the centre of the face at +z. The units can only be deg or rad.
+
+/gps/pos/confine
+
+name
+
+Allows the user to confine the source to the physical volume name [default NULL].
+
+Source direction and angular distribution
+Table 5 Source direction and angular distribution.¶
+Command
+
+Arguments
+
+Description and restrictions
+
+/gps/ang/type
+
+AngDis
+
+Sets the angular distribution type (iso [default], cos, planar, beam1d, beam2d, focused, user) to either isotropic, cosine-law or user-defined.
+
+/gps/ang/rot1
+
+AR1x AR1y AR1z
+
+Defines the first (x direction) rotation vector AR1 [default (1,0,0)] for the angular distribution and is not necessarily a unit vector. Used with /gps/ang/rot2 to compute the angular distribution rotation matrix.
+
+/gps/ang/rot2
+
+AR2x AR2y AR2z
+
+Defines the second rotation vector AR2 in the xy plane [default (0,1,0)] for the angular distribution, which does not necessarily have to be a unit vector. Used with /gps/ang/rot2 to compute the angular distribution rotation matrix.
+
+/gps/ang/mintheta
+
+MinTheta unit
+
+Sets a minimum value [default 0 rad] for the ¸ distribution. Units can be deg or rad.
+
+/gps/ang/maxtheta
+
+MaxTheta unit
+
+Sets a maximum value [default À rad] for the ¸ distribution. Units can be deg or rad.
+
+/gps/ang/minphi
+
+MinPhi unit
+
+Sets a minimum value [default 0 rad] for the Õ distribution. Units can be deg or rad.
+
+/gps/ang/maxphi
+
+MaxPhi unit
+
+Sets a maximum value [default 2À rad] for the Õ distribution. Units can be deg or rad.
+
+/gps/ang/sigma_r
+
+sigma unit
+
+Sets the standard deviation [default 0 rad] of beam directional profile in radial. The units can only be deg or rad.
+
+/gps/ang/sigma_x
+
+sigma unit
+
+Sets the standard deviation [default 0 rad] of beam directional profile in x-direction. The units can only be deg or rad.
+
+/gps/ang/sigma_y
+
+sigma unit
+
+Sets the standard deviation [default 0 rad] of beam directional profile in y-direction. The units can only be deg or rad.
+
+/gps/ang/focuspoint
+
+X Y Z unit
+
+Set the focusing point (X,Y,Z) for the beam [default (0,0,0) cm]. The units can only be micron, mm, cm, m or km.
+
+/gps/ang/user_coor
+
+bool
+
+Calculate the angular distribution with respect to the user defined co-ordinate system (true), or with respect to the global co-ordinate system (false, default).
+
+/gps/ang/surfnorm
+
+bool
+
+Allows user to choose whether angular distributions are with respect to the co-ordinate system (false, default) or surface normals (true) for user-defined distributions.
+
+Energy spectra
+Table 6 Source energy spectra.¶
+Command
+
+Arguments
+
+Description and restrictions
+
+/gps/ene/type
+
+EnergyDis
+
+Sets the energy distribution type to one of (see Table Table 1): Mono (mono-energetic, default), Lin (linear), Pow (power-law), Exp (exponential), Gauss (Gaussian), Brem (bremsstrahlung), Bbody (black-body), Cdg (cosmic diffuse gamma-ray), User (user-defined histogram), Arb (point-wise spectrum), Epn (energy-per-nucleon histogram)
+
+/gps/ene/min
+
+Emin unit
+
+Sets the minimum [default 0 keV] for the energy distribution. The units can be eV, keV, MeV, GeV, TeV or PeV.
+
+/gps/ene/max
+
+Emax unit
+
+Sets the maximum [default 0 keV] for the energy distribution. The units can be eV, keV, MeV, GeV, TeV or PeV.
+
+/gps/ene/mono
+
+E unit
+
+Sets the energy [default 1 MeV] for mono-energetic sources. The units can be eV, keV, MeV, GeV, TeV or PeV.
+
+/gps/ene/sigma
+
+sigma unit
+
+Sets the standard deviation [default 0 keV] in energy for Gaussian or Mono energy distributions. The units can be eV, keV, MeV, GeV, TeV or PeV.
+
+/gps/ene/alpha
+
+alpha
+
+Sets the exponent ± [default 0] for a power-law distribution.
+
+/gps/ene/temp
+
+T
+
+Sets the temperature in kelvins [default 0] for black body and bremsstrahlung spectra.
+
+/gps/ene/ezero
+
+E0
+
+Sets scale E0 [default 0] for exponential distributions.
+
+/gps/ene/gradient
+
+gradient
+
+Sets the gradient (slope) [default 0] for linear distributions.
+
+/gps/ene/intercept
+
+intercept
+
+Sets the Y-intercept [default 0] for the linear distributions.
+
+/gps/ene/biasAlpha
+
+alpha
+
+Sets the exponent ± [default 0] for a biased power-law distribution. Bias weight is determined from the power-law probability distribution.
+
+/gps/ene/calculate
+
+Prepares integral PDFs for the internally-binned cosmic diffuse gamma ray (Cdg) and black body (Bbody) distributions.
+
+/gps/ene/emspec
+
+bool
+
+Allows user to specify distributions are in momentum (false) or energy (true, default). Only valid for User and Arb distributions.
+
+/gps/ene/diffspec
+
+bool
+
+Allows user to specify whether a point-wise spectrum is integral (false) or differential (true, default). The integral spectrum is only usable for Arb distributions.
+
+User-defined histograms and interpolated functions
+Table 7 User defined histograms and interpolated functions.¶
+Command
+
+Arguments
+
+Description and restrictions
+
+/gps/hist/type
+
+type
+
+Set the histogram type: predefined biasx [default], biasy, biasz, biast (angle ¸, biasp (angle Õ), biaspt (position ¸, biaspp (position Õ), biase; user-defined histograms theta, phi, energy, arb (point-wise), epn (energy per nucleon).
+
+/gps/hist/reset
+
+type
+
+Re-set the specified histogram: biasx [default], , biasy, biasz, biast, biasp, biaspt, biaspp, biase, theta, phi, energy, arb, epn.
+
+/gps/hist/point
+
+Ehi Weight
+
+Specify one entry (with contents Weight) in a histogram (where Ehi is the bin upper edge) or point-wise distribution (where Ehi is the abscissa). The abscissa Ehi must be in Geant4 default units (MeV for energy, rad for angle).
+
+/gps/hist/file
+
+HistFile
+
+Import an arbitrary energy histogram in an ASCII file. The format should be one Ehi Weight pair per line of the file, following the detailed instructions in User-defined histograms and interpolated functions For histograms, Ehi is the bin upper edge, for point-wise distributions Ehi is the abscissa. The abscissa Ehi must be in Geant4 default units (MeV for energy, rad for angle).
+
+/gps/hist/inter
+
+type
+
+Sets the interpolation type (Lin linear, Log logarithmic, Exp exponential, Spline cubic spline) for point-wise spectra. This command must be issued immediately after the last data point.
+
+from www.geant4-userdoc.web.cern.ch
