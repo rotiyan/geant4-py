@@ -1,0 +1,28 @@
+/vis/open OGLSX
+
+
+/vis/viewer/refresh
+
+/vis/scene/create
+/vis/scene/add/volume
+/vis/viewer/set/style wireframe
+
+
+/vis/sceneHandler/attach
+
+/vis/viewer/set/viewpointThetaPhi 80. 10.
+/vis/viewer/zoom 1.5
+
+# To get nice view
+/vis/geometry/set/visibility World 0 true
+/vis/geometry/set/visibility Envelope 0 false
+/vis/viewer/set/style wireframe
+/vis/viewer/set/hiddenMarker true
+/vis/viewer/set/viewpointThetaPhi 120 150
+
+# Re-establish auto refreshing and verbosity:
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+#
+# For file-based drivers, use this to create an empty detector view:
+#/vis/viewer/flush
