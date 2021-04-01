@@ -24,14 +24,13 @@ from Geant4_Class_Define import *
 
 parser = argparse.ArgumentParser(description='Yaml File Name')
 parser.add_argument('--Setupfile', type = str, required=True, default = 'defaultsetup.yml')
-parser.add_argument('--Seed', type = int, help = 'Random Seed For Geant4 Simulation')
+parser.add_argument('--Seed', default='',type = int, help = 'Random Seed For Geant4 Simulation')
 
 args = parser.parse_args()
 
 # creating random seed
-if seed != 'None':
-   seed = args.Seed
-else:
+seed = args.Seed
+if args.Seed=='':
    seed = random.randint(10,800000)
 
 
@@ -41,9 +40,8 @@ HepRandom.setTheSeed(seed)
 
 # Simulation Setup
 
-path = 'Batch Mode Setupfiles/'
 file_name = args.Setupfile
-temp = path + file_name
+temp = file_name
 file_Yaml = open(temp, 'r')
 file_data = file_Yaml.read()
 file_Yaml.close()
