@@ -1,1 +1,2 @@
-###Batch submission on Maneframe2
+Batch submission script 
+
