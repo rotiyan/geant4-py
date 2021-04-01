@@ -1,17 +1,10 @@
 from Geant4 import *
-
 import g4py.NISTmaterials
-
 import os
-
 import random 
-
 import time
-
 import pickle
-
 import argparse
-
 import yaml
 
 from datetime import datetime
@@ -89,9 +82,9 @@ gRunManager.SetUserInitialization(physics_list)
 
 # set user run action
 myRA = MyUserRunAction()
-saving_path = 'Output File/'
+saving_path = 'OutputFile/'
 OFP_name = Setup_data['OFP_name']
-temp = saving_path + OFP_name
+temp = saving_path + "%d_"%seed + OFP_name
 myRA.SetFilePath(temp)
 gRunManager.SetUserAction(myRA)
 
@@ -130,7 +123,7 @@ gRunManager.SetUserAction(mySA)
 
 # set particle
 file_NS = Setup_data['file_NS']
-particle_path = 'Particle File/'
+particle_path = 'ParticleFile/'
 temp = particle_path + file_NS
 if os.path.isfile(temp):
     primary_generator_action = MyPrimaryGeneratorAction(temp)

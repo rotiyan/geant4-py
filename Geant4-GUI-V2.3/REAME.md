@@ -1,0 +1,7 @@
+Batch submission script 
+
+You can submit the jobs on maneframe. Its best if you do the submission from the loging machines (m2.smu.edu). Unlike the novnc interface on hpc.smu.edu  you are guaranteed to get access to a login instance. 
+
+After logging in checkout this repo and navigate to Geant4-GUI-V2.3. If you want to submit 100 parallel jobs, you just run sbatch --array=0-99 submitToBatch.sh $(readlink -f run.sh). This will spawn hundred parallel jobs on the maneframe cluster. Please check submitToBatch.sh script. We submit the jobs to the htc queue on maneframe. If you want to try alternate queues (for example mic) you need to edit this file to reflect the change. 
+
+Maneframe uses slurm batch sheduler to shedule jobs on its node. In order to ensure an equitable usage among all users, slurm reduces your jobs priority if you have already used a lot of resources via previous job submissions or if you request huge resources in terms of time and CPU's. Typically there is a time limit for resource usage on maneframe. This is 24 hours for htc queue. If you don't specify your time estimate in the job submission, slurm assumes you would run the job until the job spills over its maximum time allocation. If you specify a time estimate (lower the better), there is a high chance that you jobs would start early. The default time is set in the submission file to 4 hours. But please feel free to change it accordingly for your use case. 
