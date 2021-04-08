@@ -1,6 +1,6 @@
 from Geant4 import *
 
-import g4py.NISTmaterials
+#import g4py.NISTmaterials
 
 # creating target materials
 a= 69.72*g/mole
@@ -20,7 +20,14 @@ GaN= G4Material("GaN", density, 2)
 GaN.AddElement(elGa, 0.83272)
 GaN.AddElement(elN, 0.16728)
 
-g4py.NISTmaterials.Construct()
+#g4py.NISTmaterials.Construct()
+G4NistManager.Instance().FindOrBuildMaterial("G4_AIR")
+G4NistManager.Instance().FindOrBuildMaterial("G4_Si")
+G4NistManager.Instance().FindOrBuildMaterial("G4_WATER")
+G4NistManager.Instance().FindOrBuildMaterial("G4_Galactic")
+G4NistManager.Instance().FindOrBuildMaterial("G4_Al")
+G4NistManager.Instance().FindOrBuildMaterial("G4_Si")
+G4NistManager.Instance().FindOrBuildMaterial("G4_ALUMINUM_OXIDE")
 
 density= 3.17*g/cm3
 SiN= G4Material("SiN", density, 2)

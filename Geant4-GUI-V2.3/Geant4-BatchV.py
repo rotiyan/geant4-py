@@ -1,5 +1,5 @@
 from Geant4 import *
-import g4py.NISTmaterials
+#import g4py.NISTmaterials
 import os
 import random 
 import time
@@ -18,6 +18,7 @@ from Geant4_Class_Define import *
 parser = argparse.ArgumentParser(description='Yaml File Name')
 parser.add_argument('--Setupfile', type = str, required=True, default = 'defaultsetup.yml')
 parser.add_argument('--Seed', default='',type = int, help = 'Random Seed For Geant4 Simulation')
+parser.add_argument('--numThreads', default=10,type= int, help= 'Multithread mode : number of threads')
 
 args = parser.parse_args()
 
@@ -132,6 +133,7 @@ else:
     raise Exception("Invalid Particle Setup File Name")
 
 # Initialise
+gRunManager.SetNumberOfThreads(10)
 gRunManager.Initialize()
 gTrackingManager.SetStoreTrajectory(1)
 gApplyUICommand("/tracking/storeTrajectory 1")
@@ -143,5 +145,5 @@ gRunManager.BeamOn(Event_num)
 # User Action
 end = time.clock()
 t = (end-start)/60
-print "Total Computation Time: %s mins" %(str(t))
+print ("Total Computation Time: %s mins" %(str(t)))
 
