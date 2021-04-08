@@ -11,7 +11,7 @@ RUN apt-get update && \
     cmake\
     git\
     python python-tk \
-    python3 python3.6-dev ipython jupyter wget unzip wget vim-gtk curl\
+    python3 python3-pip python3-yaml python3.6-dev ipython jupyter wget unzip wget vim-gtk curl\
     libxerces-c-dev qt4-dev-tools freeglut3-dev libmotif-dev tk-dev cmake libxpm-dev libxmu-dev libxi-dev \
     dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev libxft-dev libxext-dev gfortran libssl-dev libpcre3-dev \ 
     xlibmesa-glu-dev libglew1.5-dev libftgl-dev libmysqlclient-dev libfftw3-dev libcfitsio-dev \ 
