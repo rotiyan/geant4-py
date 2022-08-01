@@ -144,6 +144,7 @@ class MyUserSteppingAction(G4UserSteppingAction):
 
   def UserSteppingAction(self, step):
     print "In stepping action "
+    print (str(self.AtomicM_Thres) + ',' + self.Active_Layer + ',' + str(self.min_dX) + ',' + str(self.min_dE))
     ra = gRunManager.GetUserRunAction()
     oFile = ra.Ofile
 
@@ -174,10 +175,80 @@ class MyUserSteppingAction(G4UserSteppingAction):
     depth = 0
 
     ###############################################################
+
     if AtomicM > self.AtomicM_Thres and vName == self.Active_Layer and dx > self.min_dX and dE > self.min_dE:
 
-        write_buffer = [str(vName),str(pName),'%i  %f  %f  %f  %f  %f  %f  %f  %f  %f  %f  %f  %f\n'%(ID,dEt,dEn,dE,PreE,PostE,dx,Pre_x,Pre_y,Pre_z,Post_x,Post_y,Post_z)]
-	oFile.write('  '.join(write_buffer))
+        oFile.write(str(vName))
+	oFile.write('          ')
+	oFile.write(str(pName))  
+	oFile.write('          ')
+	oFile.write('%i'%ID)
+	oFile.write('          ')
+	oFile.write('%f'%dEt)
+	oFile.write('          ')
+	oFile.write('%f'%dEn)
+	oFile.write('          ')
+	oFile.write('%f'%dE)
+	oFile.write('          ')
+	oFile.write('%f'%PreE)
+	oFile.write('          ')
+	oFile.write('%f'%PostE)
+	oFile.write('          ')
+	oFile.write('%f'%dx)
+	oFile.write('          ')
+        oFile.write('%f'%Pre_x)
+	oFile.write('          ')
+        oFile.write('%f'%Pre_y)
+	oFile.write('          ')
+        oFile.write('%f'%Pre_z)
+	oFile.write('          ')
+        oFile.write('%f'%Post_x)
+	oFile.write('          ')
+        oFile.write('%f'%Post_y)
+	oFile.write('          ')
+        oFile.write('%f'%Post_z)
+	oFile.write('\n')
+	oFile.write(str(vName))
+	oFile.write('          ')
+
+    elif AtomicM > self.AtomicM_Thres and self.Active_Layer == "None" and dx > self.min_dX and dE > self.min_dE:
+
+	oFile.write(str(vName))
+	oFile.write('          ')
+	oFile.write(str(pName))  
+	oFile.write('          ')
+	oFile.write('%i'%ID)
+	oFile.write('          ')
+	oFile.write('%f'%dEt)
+	oFile.write('          ')
+	oFile.write('%f'%dEn)
+	oFile.write('          ')
+	oFile.write('%f'%dE)
+	oFile.write('          ')
+	oFile.write('%f'%PreE)
+	oFile.write('          ')
+	oFile.write('%f'%PostE)
+	oFile.write('          ')
+	oFile.write('%f'%dx)
+	oFile.write('          ')
+        oFile.write('%f'%Pre_x)
+	oFile.write('          ')
+        oFile.write('%f'%Pre_y)
+	oFile.write('          ')
+        oFile.write('%f'%Pre_z)
+	oFile.write('          ')
+        oFile.write('%f'%Post_x)
+	oFile.write('          ')
+        oFile.write('%f'%Post_y)
+	oFile.write('          ')
+        oFile.write('%f'%Post_z)
+	oFile.write('\n')
+	oFile.write(str(vName))
+	oFile.write('          ')
 
     else:
-	pass
+        pass
+
+ 
+            
+

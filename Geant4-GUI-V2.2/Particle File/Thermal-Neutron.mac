@@ -1,0 +1,10 @@
+/gps/verbose 1
+/gps/particle neutron
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre 0 0 10 mm
+/gps/pos/halfx 0.25 mm
+/gps/pos/halfy 0.25 mm
+/gps/pos/halfz 0 mm
+/gps/ang/type planar
+/gps/ene/mono 0.000000025 MeV

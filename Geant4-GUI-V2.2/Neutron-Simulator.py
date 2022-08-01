@@ -91,14 +91,14 @@ class Application(Frame):
 	ActiveLayer.grid(row=3, column=0, sticky=W)
         layer.grid(row=3, column=1, columnspan=5, sticky=W)
 	#Condition 3, active layer
-	MinidX = Label(window2, bg="yellow",  text="Minimum Step Length")
+	MinidX = Label(window2, bg="yellow",  text="Minimum Step Length(um)")
         self.min_dX=DoubleVar()
         self.min_dX.set("0")
         layer = Entry(window2, textvariable=self.min_dX, width=25)
 	MinidX.grid(row=4, column=0, sticky=W)
         layer.grid(row=4, column=1, columnspan=5, sticky=W)
 	#Condition 4, active layer
-	MinidE = Label(window2, bg="yellow",  text="Minimum Energy Deposition")
+	MinidE = Label(window2, bg="yellow",  text="Minimum Energy Deposition(eV)")
         self.min_dE=DoubleVar()
         self.min_dE.set("0")
         layer = Entry(window2, textvariable=self.min_dE, width=25)

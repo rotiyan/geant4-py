@@ -3,6 +3,7 @@ import os
 import webbrowser
 import tkMessageBox
 from Geo_Editor import *
+from Setupfile_Editor import *
 
 # Menu Function Define
 def callback(url):
@@ -26,7 +27,7 @@ def about_cmd():
    filewin2 = Toplevel(root)
    title = Label(filewin2, text="About", bg="red")
    title.pack()
-   aboutlable = Label(filewin2, text="SMU Reliability Lab Geant4 GUI Version 1.1\nPython 2.7.17 based\nFor Research Purpose Only\n Han Gao 1/1/2021")
+   aboutlable = Label(filewin2, text="SMU Reliability Lab Geant4 GUI Version 2.2\nPython 2.7.17 based\nFor Research Purpose Only-All Right Reserved\n Han Gao 1/1/2021")
    aboutlable.pack()
    contactlabel = Label(filewin2, text="Contact us: smureliabilitylab@gmail.com", bg='yellow')
    contactlabel.pack()
@@ -169,6 +170,7 @@ filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="New Simulation Session", command=NewSession)
 filemenu.add_command(label="New Mono Energy Particle Source", command=partice_def_cmd)
 filemenu.add_command(label="New Target Geometry", command=lambda : Geo_Editor_cmd(mother=root))
+filemenu.add_command(label="New Batch Mode Setupfile", command=lambda : Setupfile_Editor_cmd(mother=root))
 filemenu.add_separator()
 filemenu.add_command(label="Exit", command=root.quit)
 menubar.add_cascade(label="File", menu=filemenu)
