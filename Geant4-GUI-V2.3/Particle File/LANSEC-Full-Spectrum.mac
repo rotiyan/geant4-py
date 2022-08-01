@@ -1,0 +1,63 @@
+/gps/verbose 1
+/gps/particle neutron
+/gps/pos/type Plane
+/gps/pos/shape Square
+/gps/pos/centre 0 0 10 mm
+/gps/pos/halfx 5 mm
+/gps/pos/halfy 5 mm
+
+/gps/ang/type planar
+
+/gps/ene/type User
+/gps/hist/type energy
+/gps/hist/point 1.5	0.0433620859633615
+/gps/hist/point 1.75	0.0437929149281672
+/gps/hist/point 2	0.0372964558781965
+/gps/hist/point 2.25	0.0335575733966562
+/gps/hist/point 2.5	0.0304226980103306
+/gps/hist/point 2.75	0.0276989812793854
+/gps/hist/point 3	0.0242695519489784
+/gps/hist/point 3.5	0.0428552652572746
+/gps/hist/point 4	0.0369215325483622
+/gps/hist/point 4.5	0.0314417944588023
+/gps/hist/point 5	0.0279204390504729
+/gps/hist/point 5.5	0.0239968147793515
+/gps/hist/point 6	0.0205850682590824
+/gps/hist/point 7	0.0337675057733062
+/gps/hist/point 8	0.0260938162612975
+/gps/hist/point 9	0.0204091147338465
+/gps/hist/point 10	0.0165596290464982
+/gps/hist/point 12.5	0.0292612223097281
+/gps/hist/point 15	0.0189976045153349
+/gps/hist/point 17.5	0.0154301646636851
+/gps/hist/point 20	0.0127163430549694
+/gps/hist/point 22.5	0.0113572434602056
+/gps/hist/point 25	0.0104058696571476
+/gps/hist/point 27.5	0.00949313436388567
+/gps/hist/point 30	0.00889827307996330
+/gps/hist/point 35	0.0168002770851874
+/gps/hist/point 40	0.0152886354952136
+/gps/hist/point 45	0.0140666041856718
+/gps/hist/point 50	0.0133261418436761
+/gps/hist/point 55	0.0125541337921593
+/gps/hist/point 60	0.0116602279733081
+/gps/hist/point 70	0.0210612563663782
+/gps/hist/point 80	0.0188678149064823
+/gps/hist/point 90	0.0169645233485960
+/gps/hist/point 100	0.0152623481150403
+/gps/hist/point 125	0.0270554431705077
+/gps/hist/point 150	0.0263894738289304
+/gps/hist/point 175	0.0214294485140143
+/gps/hist/point 200	0.0177933151273713
+/gps/hist/point 225	0.0149379524516452
+/gps/hist/point 250	0.0128871847502286
+/gps/hist/point 275	0.0112693311343492
+/gps/hist/point 300	0.00992215241625908
+/gps/hist/point 350	0.0168139310520150
+/gps/hist/point 400	0.0141272814466569
+/gps/hist/point 450	0.0118155366746016
+/gps/hist/point 500	0.00945476614889013
+/gps/hist/point 550	0.00663962177614991
+/gps/hist/point 600	0.00376047070774477
+/gps/hist/point 700	0.00220638480995811
+/gps/hist/point 800	0.000134646200674894

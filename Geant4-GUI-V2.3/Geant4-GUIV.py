@@ -27,7 +27,7 @@ def about_cmd():
    filewin2 = Toplevel(root)
    title = Label(filewin2, text="About", bg="red")
    title.pack()
-   aboutlable = Label(filewin2, text="SMU Reliability Lab Geant4 GUI Version 1.1\nPython 2.7.17 based\nFor Research Purpose Only\n Han Gao 1/1/2021")
+   aboutlable = Label(filewin2, text="SMU Reliability Lab Geant4 GUI Version 2.3\nPython 2.7.17 based\nFor Research Purpose Only-All Right Reserved\n Han Gao 1/1/2021")
    aboutlable.pack()
    contactlabel = Label(filewin2, text="Contact us: smureliabilitylab@gmail.com", bg='yellow')
    contactlabel.pack()

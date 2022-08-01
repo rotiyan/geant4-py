@@ -262,7 +262,7 @@ class Application(Frame):
 	# File name Input 3
         layerLabel = Label(self, bg="yellow",  text="Output File(ex:output.h5)")
         self.file_OP = StringVar()
-        self.file_OP.set("output.txt")
+        self.file_OP.set("output.h5")
         layer = Entry(self, textvariable=self.file_OP, width=25)
         layerLabel.grid(row=6, column=0, sticky=W)
         layer.grid(row=6, column=1, sticky=W)
